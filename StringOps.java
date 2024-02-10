@@ -22,8 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-       // String word="vowels are fun";
-        // System.out.println(capVowelsLowRest(word));
+        //String word="hello World";
+         //System.out.println(capVowelsLowRest(word));
         // String word="   Intro   to  computer   science    ";
         // System.out.println(camelCase(word));
         //String word="Hello world";
