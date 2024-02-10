@@ -22,21 +22,64 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        
+       // String word="vowels are fun";
+        // System.out.println(capVowelsLowRest(word));
+        // String word="   Intro   to  computer   science    ";
+        // System.out.println(camelCase(word));
+        //String word="Hello world";
+        //allIndexOf(word,'l');
+       // String word="Hello world";
+        //System.out.println(allIndexOf(word,'l'));
     }
 
     public static String capVowelsLowRest (String string) {
-        // Write your code here:
-        return "";
+       String newString="";
+       for(int i=0; i < string.length(); i++){
+             if("aeiou".indexOf(string.charAt(i))!=-1){
+                 newString+=(char)(string.charAt(i)-32);
+                } else {
+                      newString+=(char)(string.charAt(i));
+                     }
+         }
+        return newString;
     }
 
     public static String camelCase (String string) {
-        // Write your code here:
-        return "";
+       String newStr="";
+       int firstWord=string.indexOf(' ');
+        for(int i=0; i <= firstWord; i++){
+            if(string.charAt(i)>='A' && string.charAt(i)<='Z'){
+                newStr+=(char)(string.charAt(i)+32);
+            }else if(string.charAt(i)!=' '){
+                newStr+=(char)(string.charAt(i));
+            }
+        }
+        int j=firstWord;
+        while(j < string.length()){
+            if(string.charAt(j)>='a' && string.charAt(j)<='z' && string.charAt(j-1)==' '){
+                newStr+=(char)(string.charAt(j)-32);
+            }else if(string.charAt(j)>='A' && string.charAt(j)<='Z'){
+                newStr+=(char)(string.charAt(j)+32);
+            }else if(string.charAt(j)>='a' && string.charAt(j)<='z'){
+                newStr+=(char)(string.charAt(j));
+            }
+            j++;
+        }
+        return newStr;
     }
-
     public static int[] allIndexOf (String string, char chr) {
-        // Write your code here:
-        return new int[1];
+        int count=0;
+        for(int i=0; i < string.length(); i++){
+            if(string.charAt(i)==chr){
+                count++;
+            }
+        }
+        int[] arrNew=new int[count];
+        int n=0;
+        for(int j=0; j < arrNew.length; j++){
+                arrNew[j]=string.indexOf(chr, n);
+                n=arrNew[j]+1;
+        }
+        return arrNew;
     }
 }
