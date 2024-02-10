@@ -28,7 +28,7 @@ public class StringOps {
         // System.out.println(camelCase(word));
         //String word="Hello world";
         //allIndexOf(word,'l');
-       // String word="Hello world";
+        //String word="Hello world";
         //System.out.println(allIndexOf(word,'l'));
     }
 
@@ -75,10 +75,12 @@ public class StringOps {
             }
         }
         int[] arrNew=new int[count];
-        int n=0;
-        for(int j=0; j < arrNew.length; j++){
-                arrNew[j]=string.indexOf(chr, n);
-                n=arrNew[j]+1;
+        int index=0;
+        for(int j=0; j < string.length(); j++){
+            if(string.charAt(j)==chr){
+                arrNew[index]=j;
+                index++;
+            }
         }
         return arrNew;
     }
