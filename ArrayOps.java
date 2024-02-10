@@ -4,8 +4,8 @@ public class ArrayOps {
       // System.out.println(findMissingInt(arrNew));
        //int[] arrNew={6,9,9,8,5,3};
        //System.out.println(secondMaxValue(arrNew));
-       //int[] arrNew1={1,2,1,1,3,3};
-       //int[] arrNew2={1,2,1,3};
+      // int[] arrNew1={1,2,3,-4,5,1,1,3};
+      // int[] arrNew2={1,1,1,1,1,5,-4,2};
        //System.out.println(containsTheSameElements(arrNew1,arrNew2));
       // int[] arrNew={5,1,1,-2};
        //System.out.println(isSorted(arrNew));
@@ -45,9 +45,9 @@ public class ArrayOps {
     }
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
         boolean index=false;
-        for(int i=0; i < Math.max(array1.length, array2.length); i++){ 
+        for(int i=0; i < Math.min(array1.length, array2.length); i++){ 
             index=false;
-            for(int j=0; j < Math.min(array1.length, array2.length); j++)       
+            for(int j=0; j < Math.max(array1.length, array2.length); j++)       
                 if(array1[i]==array2[j]){
                    index=true;
                 }
