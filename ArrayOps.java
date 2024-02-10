@@ -1,7 +1,7 @@
 public class ArrayOps {
     public static void main(String[] args) {
-       // int[] arrNew={1,0};
-       // System.out.println(findMissingInt(arrNew));
+       int[] arrNew={2,3,1};
+       System.out.println(findMissingInt(arrNew));
        // int[] arrNew={6,9,4,8,5,3};
        // System.out.println(secondMaxValue(arrNew));
        //int[] arrNew1={1,2,1,1,3,3};
@@ -19,7 +19,7 @@ public class ArrayOps {
         for(int j=0; j < arrNew.length; j++){              
             if(arrNew[j]!=arrNew[j+1]-1) {
                 return arrNew[j]+1;
-            }
+            }else return 0;
         }
         return -1;
     }
