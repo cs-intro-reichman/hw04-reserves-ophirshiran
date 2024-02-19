@@ -22,23 +22,26 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-        //String word="hello World";
-         //System.out.println(capVowelsLowRest(word));
-        // String word="   Intro   to  computer   science    ";
-        // System.out.println(camelCase(word));
+        //String word="Hello World";
+        //System.out.println(capVowelsLowRest(word));
+       //String word="   Intro   to  computer   science    ";
+      // String word="Ophir shiran ophir  shiRAN   OphiR sHIRan  ";
+       // System.out.println(camelCase(word));
         //String word="Hello world";
         //allIndexOf(word,'l');
         //String word="Hello world";
         //System.out.println(allIndexOf(word,'l'));
     }
 
-    public static String capVowelsLowRest (String string) {
+    public static String capVowelsLowRest (String string) { 
        String newString="";
        for(int i=0; i < string.length(); i++){
              if("aeiou".indexOf(string.charAt(i))!=-1){
                  newString+=(char)(string.charAt(i)-32);
-                } else {
-                      newString+=(char)(string.charAt(i));
+                } else if("AEIOU".indexOf(string.charAt(i))==-1 && string.charAt(i)>= 'A' && string.charAt(i)<= 'Z'){
+                      newString+=(char)(string.charAt(i)+32);
+                     } else{
+                        newString+=(char)(string.charAt(i));
                      }
          }
         return newString;
@@ -47,6 +50,7 @@ public class StringOps {
     public static String camelCase (String string) {
        String newStr="";
        int firstWord=string.indexOf(' ');
+      
         for(int i=0; i <= firstWord; i++){
             if(string.charAt(i)>='A' && string.charAt(i)<='Z'){
                 newStr+=(char)(string.charAt(i)+32);
@@ -58,8 +62,10 @@ public class StringOps {
         while(j < string.length()){
             if(string.charAt(j)>='a' && string.charAt(j)<='z' && string.charAt(j-1)==' '){
                 newStr+=(char)(string.charAt(j)-32);
-            }else if(string.charAt(j)>='A' && string.charAt(j)<='Z'){
+            }else if(string.charAt(j)>='A' && string.charAt(j)<='Z' && string.charAt(j-1)!=' '){
                 newStr+=(char)(string.charAt(j)+32);
+            }else if(string.charAt(j)>='A' && string.charAt(j)<='Z' && string.charAt(j-1)==' '){
+                newStr+=(char)(string.charAt(j));
             }else if(string.charAt(j)>='a' && string.charAt(j)<='z'){
                 newStr+=(char)(string.charAt(j));
             }
