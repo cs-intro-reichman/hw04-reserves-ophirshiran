@@ -25,7 +25,7 @@ public class StringOps {
         //String word="Hello World";
         //System.out.println(capVowelsLowRest(word));
        //String word="   Intro   to  computer   science    ";
-      // String word="Ophir shiran ophir  shiRAN   OphiR sHIRan  ";
+       //String word=" tWo    wordS ";
        // System.out.println(camelCase(word));
         //String word="Hello world";
         //allIndexOf(word,'l');
@@ -49,8 +49,17 @@ public class StringOps {
 
     public static String camelCase (String string) {
        String newStr="";
-       int firstWord=string.indexOf(' ');
-      
+       int firstWord=0;
+        boolean isSpace=true;
+        int t=0;
+        while (isSpace == true) {
+            if(string.charAt(t)>='A' && string.charAt(t)<='Z' || string.charAt(t)>='a' && string.charAt(t)<='z'){
+                firstWord=string.indexOf(' ',t);
+                isSpace=false;
+            }
+            t++;
+        }
+     
         for(int i=0; i <= firstWord; i++){
             if(string.charAt(i)>='A' && string.charAt(i)<='Z'){
                 newStr+=(char)(string.charAt(i)+32);
